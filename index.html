@@ -3,63 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Page</title>
+    <title>Modern UI Demo</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            text-align: center;
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#6C63FF,#4A90E2,#00C9A7);
+            overflow:hidden;
         }
 
-        h1 {
-            color: #007BFF;
+        .card{
+            width:420px;
+            padding:40px;
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(15px);
+            border:1px solid rgba(255,255,255,0.2);
+            border-radius:20px;
+            text-align:center;
+            color:white;
+            box-shadow:0 15px 35px rgba(0,0,0,0.3);
+            transition:0.4s;
         }
 
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: #007BFF;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+        .card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 20px 40px rgba(0,0,0,0.35);
         }
 
-        button:hover {
-            background: #0056b3;
+        h1{
+            font-size:38px;
+            margin-bottom:15px;
+        }
+
+        p{
+            font-size:17px;
+            line-height:1.6;
+            margin-bottom:25px;
+            color:#f3f3f3;
+        }
+
+        button{
+            padding:14px 30px;
+            border:none;
+            border-radius:50px;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+            background:white;
+            color:#4A90E2;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#111827;
+            color:white;
+            transform:scale(1.05);
+        }
+
+        #message{
+            margin-top:25px;
+            font-size:18px;
+            font-weight:600;
+            color:#FFE082;
+        }
+
+        .circle{
+            position:absolute;
+            border-radius:50%;
+            background:rgba(255,255,255,0.15);
+            animation:float 8s infinite ease-in-out;
+        }
+
+        .c1{
+            width:180px;
+            height:180px;
+            top:-40px;
+            left:-50px;
+        }
+
+        .c2{
+            width:120px;
+            height:120px;
+            bottom:50px;
+            right:80px;
+            animation-delay:2s;
+        }
+
+        .c3{
+            width:80px;
+            height:80px;
+            bottom:120px;
+            left:120px;
+            animation-delay:4s;
+        }
+
+        @keyframes float{
+            0%,100%{
+                transform:translateY(0px);
+            }
+            50%{
+                transform:translateY(-25px);
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Welcome to HTML!</h1>
-        <p>This is a simple HTML page with CSS and JavaScript.</p>
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
 
-        <button onclick="showMessage()">Click Me</button>
+<div class="card">
+    <h1>Welcome 👋</h1>
+    <p>
+        Experience a modern glassmorphism interface with a vibrant gradient
+        background and smooth hover animations.
+    </p>
 
-        <p id="message"></p>
-    </div>
+    <button onclick="showMessage()">Explore</button>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").innerHTML =
-                "Hello! You clicked the button.";
-        }
-    </script>
+    <div id="message"></div>
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("message").innerHTML =
+    "✨ Thanks for clicking! Have a great day.";
+}
+</script>
 
 </body>
 </html>
